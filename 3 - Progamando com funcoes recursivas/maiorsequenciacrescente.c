@@ -16,7 +16,9 @@ int msc(int L[], int i, int j);
 int msc(int L[], int i, int j){
     int k = 1;
 
-    if(i>=j) return 0;
+    if(i>j) return 0;
+
+    if(i==j) return 1;
 
     while(L[i]<=L[i+1]){
         i++; k++;
