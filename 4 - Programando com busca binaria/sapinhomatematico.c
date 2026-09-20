@@ -18,10 +18,9 @@ int main() {
     int S;
 
    while(1){
-        printf("\n");
         int h = 0;
         int S = (alto+baixo)/2;
-        int cont = 0;
+        int cont = 0; //usado na fadiga do sapo
 
         while(h>=0){
             h = h + S-(10*cont); cont++;
@@ -29,26 +28,12 @@ int main() {
             h -= E;
         }
 
-        
-        printf("alto = %d \n",alto);
-        printf("baixo = %d \n",baixo);
-
-        if(h>=P) { resp = S; alto = S-1;} //atualizar resp antes de incrementar alto
+        if(h>=P) { resp = S; alto = S-1;} //é importante atualizar resp antes de decrementar alto
         else baixo = S+1;
 
-        printf("h = %d \n",h);
-        printf("alto = %d \n",alto);
-        printf("baixo = %d \n",baixo);
-        printf("S = %d \n",S);
-        printf("\n");
-        
-
-        if(alto<baixo) break;
+        if(alto<baixo) break; //condição de parada da busca binária
     }
 
     printf("resp = %d ",resp);
-    
-    
-
 
 }
