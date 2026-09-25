@@ -18,14 +18,11 @@ int main() {
     int p1 = 0, p2 = 1;
     resp = 0;
 
-    while(p2<N && cont<D){
+    while(p2<N && cont<C){
         if((L[p2]-L[p1])<D) p2++;
         else{
             p1 = p2; p2++; cont++;
         }
-        printf("p1 = %d \n",p1);
-        printf("p2 = %d \n",p2);
-        printf("cont = %d \n",cont);
     }
     
     if(cont == C) resp = 1;
