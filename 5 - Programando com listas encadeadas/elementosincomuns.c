@@ -27,5 +27,32 @@ int resp;
 
 
 int main() {
+    NoLista *x = p;
+    NoLista *y = q;
+    
+    while(x != NULL && y != NULL){
+        if(x->valor == y->valor){
+            while(x->prox != NULL && x->valor == x->prox->valor) x = x->prox;
+            while(y->prox != NULL && y->valor == y->prox->valor) y = y->prox;
+            x = x->prox;
+            y = y->prox;
+        }
+        else if(x->valor > y->valor){
+            resp ++;
+            y = y->prox;
+        }
 
+        else if(x->valor < y->valor){
+            resp ++;
+            x = x->prox;
+        }   
+    }
+
+    while(x != NULL){
+        resp++; x = x->prox;
+    }
+
+    while(y != NULL){
+        resp++; y = y->prox;
+    }
 }
